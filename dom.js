@@ -145,8 +145,8 @@ getComputerChoice = () => {
 console.log(getComputerChoice()); // should print 'rock', 'paper', or 'scissors'
 
 determineWinner = (userChoice, computerChoice) => {
-  if(userChoice == "bomb"){
-return "The user wins!"
+  if (userChoice == "bomb") {
+    return "The user wins!";
   }
   if (userChoice === computerChoice) {
     return "The game is a tie!";
@@ -158,55 +158,92 @@ return "The user wins!"
       return "You won!";
     }
   }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-      return 'The computer won!';
+  if (userChoice === "paper") {
+    if (computerChoice === "scissors") {
+      return "The computer won!";
     } else {
-      return 'You won!';
+      return "You won!";
     }
   }
-  if (userChoice === 'scissors') {
-    if (computerChoice === 'rock') {
-      return 'The computer won!';
+  if (userChoice === "scissors") {
+    if (computerChoice === "rock") {
+      return "The computer won!";
     } else {
-      return 'You won!';
+      return "You won!";
     }
   }
 };
-console.log(determineWinner('paper', 'scissors')); // prints something like 'The computer won!'
-console.log(determineWinner('paper', 'paper')); // prints something like 'The game is a tie!'
-console.log(determineWinner('paper', 'rock')); // prints something like 'The user won!'
+console.log(determineWinner("paper", "scissors")); // prints something like 'The computer won!'
+console.log(determineWinner("paper", "paper")); // prints something like 'The game is a tie!'
+console.log(determineWinner("paper", "rock")); // prints something like 'The user won!'
 
 const playGame = () => {
-  const userChoice = getUserChoice('scissors');
+  const userChoice = getUserChoice("scissors");
   const computerChoice = getComputerChoice();
-  console.log('You threw: ' + userChoice);
-  console.log('The computer threw: ' + computerChoice);
+  console.log("You threw: " + userChoice);
+  console.log("The computer threw: " + computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 };
 
 playGame();
 
-
 //RACE DAY
 
-let raceNumber = Math.floor(Math.random()*1000)
+let raceNumber = Math.floor(Math.random() * 1000);
 let early = true;
-let age =19;
-if(early && age > 18){
+let age = 19;
+if (early && age > 18) {
   raceNumber += 1000;
-} 
-if (early && age >18){
-  console.log(`Race will begin at 09:30, your race number is: ${raceNumber}.`)
 }
-else if (!early && age >18){
-  console.log(`Race will begin at 11:00, your race number is: ${raceNumber}.`)
-}
-else if (age <18){
-  console.log(`Race will begin at 12:30, your race number is: ${raceNumber}.`)
-}
-else{
-  console.log('Please approach the registrationd desk!')
+if (early && age > 18) {
+  console.log(`Race will begin at 09:30, your race number is: ${raceNumber}.`);
+} else if (!early && age > 18) {
+  console.log(`Race will begin at 11:00, your race number is: ${raceNumber}.`);
+} else if (age < 18) {
+  console.log(`Race will begin at 12:30, your race number is: ${raceNumber}.`);
+} else {
+  console.log("Please approach the registrationd desk!");
 }
 
+//TEAM STATS
 
+const team = {
+  _players: [
+  {firstName: 'Alex', lastName: 'Rugaju', age: '50'},
+  {firstName: 'Mia', lastName: 'Gaju', age: '11'},
+  {firstName: 'Janet', lastName: 'Rugaju', age: '49'},
+],
+  _games: [
+    {opponent: 'Doggers', teamPoints: '11', opponentPoints: '1'},
+    {opponent: 'Cardinals', teamPoints: '10', opponentPoints: '12'},
+    {opponent: 'Rams', teamPoints: '2', opponentPoints: '5'},
+
+  ],
+  get players(){
+    return this._players;
+  },
+  get games(){
+    return this._games;
+  },
+  addPlayers(newFirstName, newLastName, newAge){
+    let player = {
+      firstName: newFirstName,
+      lastname: newLastName,
+      age: newAge,
+    };
+    this.players.push(player);
+  }
+};
+team.addPlayers('Bugs', 'Bunny', 76)
+console.log(team.players);
+
+addGame(newOpponent, newTeamPoints, newOpponetntsPoints){
+  let game = {
+    opponent: newOpponent,
+    teamPoints: newTeamPoints,
+    opponentsPoints: newOpponetntsPoints,
+  };
+  this.games.push(game);
+};
+  team.addGame('Titans', '100', 98);
+console.log(team.players);

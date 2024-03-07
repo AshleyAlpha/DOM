@@ -1,3 +1,5 @@
+// Sleep Debt Calculator (Assignment) 
+
 const getSleepHours = day => {
     if (day === 'Monday') {
         return 8;
@@ -27,16 +29,6 @@ const getIdealSleepHours = () => {
     const idealHours = 6.5;
     return idealHours * 7;
 
-    const getActualSleepHours = () => 6 + 7 + 9 + 8 + 5 + 10 + 11;
-    const getIdealSleepHours = idealHours => idealHours * 7;
-    const calculateSleepDebt = () => {
-    
-      
-        const idealSleepHours = getIdealSleepHours(8);
-        
-      };
-
-
   };
   console.log('The sum of all sleep hours in the week is ' + getActualSleepHours()); // should print the sum of all sleep hours in the week
 console.log('The ideal hours is ' + getIdealSleepHours()); 
@@ -60,6 +52,10 @@ const calculateSleepDebt = () => {
       }
 }
 calculateSleepDebt()
+
+// Training Days (Assignment)
+
+
 
 
 

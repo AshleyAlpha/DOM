@@ -225,6 +225,7 @@ const team = {
   get games(){
     return this._games;
   },
+
   addPlayers(newFirstName, newLastName, newAge){
     let player = {
       firstName: newFirstName,
@@ -232,10 +233,10 @@ const team = {
       age: newAge,
     };
     this.players.push(player);
-  }
-};
-team.addPlayers('Bugs', 'Bunny', 76)
-console.log(team.players);
+  },
+
+// team.addPlayers('Bugs', 'Bunny', 76);
+// console.log(team.players);
 
 addGame(newOpponent, newTeamPoints, newOpponetntsPoints){
   let game = {
@@ -244,6 +245,9 @@ addGame(newOpponent, newTeamPoints, newOpponetntsPoints){
     opponentsPoints: newOpponetntsPoints,
   };
   this.games.push(game);
+}
 };
-  team.addGame('Titans', '100', 98);
-console.log(team.players);
+team.addGame('Titans', '100', 98);
+console.log(team.games);
+
+  
